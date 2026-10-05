@@ -64,11 +64,18 @@ authorization_tokens = {}
 # ============================================================
 
 @app.get("/")
+@app.get("/index.html")
 def home():
 
     return FileResponse(
         os.path.join(FRONTEND_DIR, "index.html")
     )
+
+
+@app.get("/favicon.ico")
+def favicon():
+    from fastapi.responses import Response
+    return Response(status_code=204)
 
 
 # ============================================================
