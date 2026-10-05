@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXUS — Network Asset Intelligence</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">N</div>
+
+        <div>
+            <div class="brand-name">NEXUS</div>
+            <div class="brand-subtitle">
+                NETWORK ASSET INTELLIGENCE
+            </div>
+        </div>
+    </div>
+
+    <div class="header-right">
+
+        <div class="connection-status">
+            <span class="live-dot"></span>
+            SYSTEM ONLINE
+        </div>
+
+        <button
+            id="authorizeBtn"
+            class="btn btn-outline"
+        >
+            AUTHORIZE NETWORK
+        </button>
+
+        <button
+            id="clearDataBtn"
+            class="btn btn-danger-outline"
+        >
+            CLEAR DATA
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                NETWORK OVERVIEW
+            </div>
+
+            <h1>
+                Know what is<br>
+                <span>connected.</span>
+            </h1>
+
+            <p>
+                Discover, monitor and understand every asset
+                inside your authorized network.
+            </p>
+
+            <div class="hero-actions">
+
+                <button
+                    id="scanBtn"
+                    class="btn btn-primary"
+                >
+                    START DISCOVERY
+                </button>
+
+                <button
+                    id="refreshBtn"
+                    class="btn btn-outline"
+                >
+                    REFRESH
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="radar">
+
+                <div class="radar-ring ring-1"></div>
+                <div class="radar-ring ring-2"></div>
+                <div class="radar-ring ring-3"></div>
+
+                <div class="radar-line"></div>
+                <div class="radar-center"></div>
+
+                <span class="radar-node node-1"></span>
+                <span class="radar-node node-2"></span>
+                <span class="radar-node node-3"></span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NETWORK -->
+
+    <section class="network-card card">
+
+        <div class="card-heading">
+
+            <div>
+                <div class="eyebrow">
+                    CURRENT NETWORK
+                </div>
+
+                <h2>
+                    Network Environment
+                </h2>
+            </div>
+
+            <div
+                id="networkStatus"
+                class="small-status"
+            >
+                DETECTING...
+            </div>
+
+        </div>
+
+
+        <div class="network-summary">
+
+            <div class="network-main">
+
+                <div class="network-label">
+                    ACTIVE NETWORKS
+                </div>
+
+                <div
+                    id="networkCount"
+                    class="network-number"
+                >
+                    —
+                </div>
+
+                <div
+                    id="networkDescription"
+                    class="network-description"
+                >
+                    Detecting local networks...
+                </div>
+
+            </div>
+
+
+            <div
+                id="networkList"
+                class="network-list"
+            >
+
+                <div class="empty-state">
+                    Detecting networks...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATISTICS -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <span>ALL ASSETS</span>
+                <span class="stat-icon">◎</span>
+            </div>
+
+            <div
+                id="totalAssets"
+                class="stat-number"
+            >
+                0
+            </div>
+
+            <div class="stat-description">
+                Discovered devices
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <span>ONLINE</span>
+                <span class="stat-icon online-icon">●</span>
+            </div>
+
+            <div
+                id="onlineAssets"
+                class="stat-number online-text"
+            >
+                0
+            </div>
+
+            <div class="stat-description">
+                Currently responding
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <span>OFFLINE</span>
+                <span class="stat-icon offline-icon">●</span>
+            </div>
+
+            <div
+                id="offlineAssets"
+                class="stat-number offline-text"
+            >
+                0
+            </div>
+
+            <div class="stat-description">
+                Not recently detected
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <span>ALERTS</span>
+                <span class="stat-icon alert-icon">!</span>
+            </div>
+
+            <div
+                id="alertCount"
+                class="stat-number alert-text"
+            >
+                0
+            </div>
+
+            <div class="stat-description">
+                Security events
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ASSET INVENTORY -->
+
+    <section class="card inventory-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    ASSET INVENTORY
+                </div>
+
+                <h2>
+                    Connected Devices
+                </h2>
+
+            </div>
+
+            <div
+                id="assetCountLabel"
+                class="asset-count"
+            >
+                0 ASSETS
+            </div>
+
+        </div>
+
+
+        <div class="toolbar">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search IP, hostname or MAC..."
+            >
+
+            <select id="statusFilter">
+
+                <option value="ALL">
+                    ALL STATUS
+                </option>
+
+                <option value="ONLINE">
+                    ONLINE
+                </option>
+
+                <option value="OFFLINE">
+                    OFFLINE
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>STATUS</th>
+                        <th>IP ADDRESS</th>
+                        <th>HOSTNAME</th>
+                        <th>MAC ADDRESS</th>
+                        <th>OPEN PORTS</th>
+                        <th>LAST SEEN</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="deviceTable">
+
+                    <tr>
+                        <td
+                            colspan="6"
+                            class="empty-table"
+                        >
+                            No devices discovered yet.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- NETWORK ACTIVITY -->
+
+    <section class="card activity-card">
+
+        <div class="card-heading">
+            <div>
+                <div class="eyebrow">OBSERVED NETWORK ACTIVITY</div>
+                <h2>Recent Connections</h2>
+            </div>
+            <div class="asset-count">DNS SIGNALS</div>
+        </div>
+
+        <p class="activity-note">
+            Domains visible to this monitor, with device and time. Encrypted traffic may hide exact app actions.
+        </p>
+
+        <div id="networkActivityList" class="network-activity-list">
+            <div class="empty-state">Waiting for visible DNS activity.</div>
+        </div>
+
+    </section>
+
+
+    <!-- ALERTS -->
+
+    <section class="card alerts-card">
+
+        <div class="card-heading">
+            <div>
+                <div class="eyebrow">SECURITY EVENTS</div>
+                <h2>Recent Alerts</h2>
+            </div>
+            <div class="asset-count">LAST 100</div>
+        </div>
+
+        <div id="alertsList" class="alerts-list">
+            <div class="empty-state">No alerts available.</div>
+        </div>
+
+    </section>
+
+
+    <!-- MONITORING -->
+
+    <section class="monitor-card">
+
+        <div>
+
+            <div class="eyebrow">
+                CONTINUOUS MONITORING
+            </div>
+
+            <h2>
+                Network monitoring
+            </h2>
+
+            <p>
+                NEXUS automatically checks authorized
+                networks every 60 seconds.
+            </p>
+
+        </div>
+
+
+        <div class="monitor-right">
+
+            <div class="monitor-indicator">
+
+                <span
+                    id="monitorDot"
+                    class="monitor-dot"
+                ></span>
+
+                <span id="monitorText">
+                    MONITORING ACTIVE
+                </span>
+
+            </div>
+
+            <div
+                id="lastScan"
+                class="last-scan"
+            >
+                Last scan: —
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    NEXUS NETWORK ASSET INTELLIGENCE
+
+    <span>•</span>
+
+    AUTHORIZED NETWORK MONITORING
+
+</footer>
+
+
+<!-- PERMISSION MODAL -->
+
+<div
+    id="permissionModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <button
+            id="closePermission"
+            class="modal-close"
+        >
+            ×
+        </button>
+
+        <div class="eyebrow">
+            AUTHORIZATION REQUIRED
+        </div>
+
+        <h2>
+            Authorize Network Discovery
+        </h2>
+
+        <p class="modal-description">
+            NEXUS observes responding devices, hostnames,
+            and common TCP services on the following
+            locally reachable private networks.
+            Continue only if you are authorized to
+            monitor these networks. It does not inspect
+            message content or identify exact app usage.
+        </p>
+
+
+        <div
+            id="permissionNetworks"
+            class="permission-networks"
+        >
+            Loading networks...
+        </div>
+
+
+        <label class="permission-check">
+
+            <input
+                type="checkbox"
+                id="permissionCheckbox"
+            >
+
+            <span>
+                I confirm that I am authorized to
+                scan and monitor these networks.
+            </span>
+
+        </label>
+
+
+        <div class="modal-actions">
+
+            <button
+                id="cancelPermission"
+                class="btn btn-outline"
+            >
+                CANCEL
+            </button>
+
+            <button
+                id="confirmPermission"
+                class="btn btn-primary"
+                disabled
+            >
+                AUTHORIZE & CONTINUE
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- DEVICE DETAILS MODAL -->
+
+<div
+    id="deviceModal"
+    class="modal"
+>
+
+    <div class="modal-box device-modal">
+
+        <button
+            id="closeDevice"
+            class="modal-close"
+        >
+            ×
+        </button>
+
+        <div class="eyebrow">
+            ASSET DETAILS
+        </div>
+
+        <h2 id="deviceModalTitle">
+            Device
+        </h2>
+
+        <div
+            id="deviceDetails"
+            class="details-grid"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<script src="/static/app.js?v=11"></script>
+
+</body>
+</html>

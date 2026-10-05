@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">NEXUS Network Asset Intelligence dashboard overview</title>
+  <desc id="desc">A dark network monitoring dashboard showing connected devices, services, activity, and monitoring status.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1410"/>
+      <stop offset="1" stop-color="#050806"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#45ff8b" stroke-opacity=".08"/>
+    </pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="620" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="620" rx="18" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1200" height="64" rx="18" fill="#070b08"/>
+  <rect x="0" y="52" width="1200" height="12" fill="#070b08"/>
+  <rect x="32" y="17" width="30" height="30" fill="none" stroke="#b9ff55"/>
+  <text x="47" y="38" fill="#b9ff55" font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">N</text>
+  <text x="78" y="35" fill="#e8eee9" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="4">NEXUS</text>
+  <text x="1008" y="36" fill="#45ff8b" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">SYSTEM ONLINE</text>
+  <circle cx="990" cy="31" r="5" fill="#45ff8b" filter="url(#glow)"/>
+  <rect x="32" y="92" width="1136" height="142" fill="#0c1210" stroke="#26362d"/>
+  <rect x="32" y="92" width="4" height="142" fill="#b9ff55"/>
+  <text x="62" y="122" fill="#7e8c83" font-family="Arial, sans-serif" font-size="11" letter-spacing="3">NETWORK OVERVIEW</text>
+  <text x="62" y="166" fill="#e8eee9" font-family="Arial, sans-serif" font-size="34" font-weight="700">Know what is</text>
+  <text x="62" y="205" fill="#b9ff55" font-family="Arial, sans-serif" font-size="34" font-weight="700">connected.</text>
+  <circle cx="1020" cy="163" r="57" fill="none" stroke="#b9ff55" stroke-opacity=".22"/>
+  <circle cx="1020" cy="163" r="39" fill="none" stroke="#b9ff55" stroke-opacity=".18"/>
+  <circle cx="1020" cy="163" r="20" fill="none" stroke="#b9ff55" stroke-opacity=".16"/>
+  <path d="M1020 163L1071 144" stroke="#b9ff55" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="1020" cy="163" r="5" fill="#b9ff55"/>
+  <circle cx="978" cy="140" r="4" fill="#45ff8b"/><circle cx="1056" cy="185" r="4" fill="#45ff8b"/><circle cx="1039" cy="119" r="4" fill="#45ff8b"/>
+  <rect x="32" y="256" width="270" height="116" fill="#0c1210" stroke="#26362d"/>
+  <rect x="318" y="256" width="270" height="116" fill="#0c1210" stroke="#26362d"/>
+  <rect x="604" y="256" width="270" height="116" fill="#0c1210" stroke="#26362d"/>
+  <rect x="890" y="256" width="278" height="116" fill="#0c1210" stroke="#26362d"/>
+  <g font-family="Arial, sans-serif">
+    <text x="53" y="282" fill="#7e8c83" font-size="11" letter-spacing="2">ALL ASSETS</text><text x="53" y="333" fill="#b9ff55" font-size="38" font-weight="700">24</text><text x="53" y="356" fill="#7e8c83" font-size="11">Discovered devices</text>
+    <text x="339" y="282" fill="#7e8c83" font-size="11" letter-spacing="2">ONLINE</text><text x="339" y="333" fill="#45ff8b" font-size="38" font-weight="700">18</text><text x="339" y="356" fill="#7e8c83" font-size="11">Currently responding</text>
+    <text x="625" y="282" fill="#7e8c83" font-size="11" letter-spacing="2">OFFLINE</text><text x="625" y="333" fill="#ff5c63" font-size="38" font-weight="700">6</text><text x="625" y="356" fill="#7e8c83" font-size="11">Not recently detected</text>
+    <text x="911" y="282" fill="#7e8c83" font-size="11" letter-spacing="2">ALERTS</text><text x="911" y="333" fill="#ffd166" font-size="38" font-weight="700">7</text><text x="911" y="356" fill="#7e8c83" font-size="11">Security events</text>
+  </g>
+  <rect x="32" y="394" width="1136" height="84" fill="#0c1210" stroke="#26362d"/>
+  <text x="54" y="422" fill="#7e8c83" font-family="Arial, sans-serif" font-size="11" letter-spacing="3">OBSERVED NETWORK ACTIVITY</text>
+  <text x="54" y="454" fill="#e8eee9" font-family="Arial, sans-serif" font-size="15">youtube.com</text><text x="260" y="454" fill="#ffd166" font-family="Arial, sans-serif" font-size="11">VIDEO</text><text x="390" y="454" fill="#7e8c83" font-family="Arial, sans-serif" font-size="11">192.168.90.111</text><text x="1004" y="454" fill="#7e8c83" font-family="Arial, sans-serif" font-size="11">16:34:28</text>
+  <rect x="32" y="500" width="1136" height="76" fill="#0c1210" stroke="#26362d"/>
+  <text x="54" y="531" fill="#7e8c83" font-family="Arial, sans-serif" font-size="11" letter-spacing="3">CONTINUOUS MONITORING</text>
+  <text x="54" y="558" fill="#e8eee9" font-family="Arial, sans-serif" font-size="17" font-weight="700">Network monitoring</text>
+  <circle cx="1018" cy="541" r="5" fill="#45ff8b" filter="url(#glow)"/><text x="1034" y="546" fill="#45ff8b" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">MONITORING ACTIVE</text>
+</svg>
